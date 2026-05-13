@@ -89,3 +89,33 @@ button:hover {
   font-weight: 600;
   margin-top: 10px;
 }
+
+/* 제품 정보 */
+#product-info {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  max-width: 300px;
+  z-index: 15;
+}
+
+#product-info h2 {
+  font-size: 1.8rem;
+  margin: 0 0 10px 0;
+  color: #222;
+  font-weight: 600;
+}
+
+#product-info p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  margin: 0 0 20px 0;
+}
+
+#price-display {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+}

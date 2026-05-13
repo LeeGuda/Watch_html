@@ -130,16 +130,32 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 
 // --- 6. UI 로드 ---
+let selectedCase = null;
+let selectedStrap = null;
+let basePrice = 500000;
+
+function updatePrice() {
+  let total = basePrice;
+  if (selectedCase) total += selectedCase.price;
+  if (selectedStrap) total += selectedStrap.price;
+  document.getElementById("price-display").innerText = `₩${total.toLocaleString()}`;
+}
+
 async function loadConfig() {
   try {
     const response = await fetch("./data.json");
     const data = await response.json();
+    basePrice = data.basePrice;
 
     const caseMenu = document.getElementById("case-menu");
     data.caseColors.forEach((item) => {
       const btn = document.createElement("button");
       btn.innerText = item.name;
-      btn.onclick = () => watchBody.material.color.setHex(item.hex);
+      btn.onclick = () => {
+        watchBody.material.color.setHex(item.hex);
+        selectedCase = item;
+        updatePrice();
+      };
       caseMenu.appendChild(btn);
     });
 
@@ -151,9 +167,19 @@ async function loadConfig() {
         strapMaterial.color.setHex(item.hex);
         strapMaterial.metalness = item.metal;
         strapMaterial.roughness = item.rough;
+        selectedStrap = item;
+        updatePrice();
       };
       strapMenu.appendChild(btn);
     });
+
+    // 초기 가격 설정
+    updatePrice();
+
+    // 장바구니 버튼
+    document.getElementById("order-btn").onclick = () => {
+      alert("Added to cart! Total: " + document.getElementById("price-display").innerText);
+    };
   } catch (err) {
     console.error("JSON 로드 실패:", err);
   }

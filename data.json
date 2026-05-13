@@ -1,8 +1,14 @@
 {
+  "basePrice": 500000,
   "caseColors": [
-    { "id": "pinkgold", "name": "Pink Gold", "hex": "0xf1ccc5" },
-    { "id": "silver", "name": "Silver", "hex": "0xc4c4c4" },
-    { "id": "black", "name": "Black", "hex": "0x222222" }
+    {
+      "id": "pinkgold",
+      "name": "Pink Gold",
+      "hex": "0xf1ccc5",
+      "price": 50000
+    },
+    { "id": "silver", "name": "Silver", "hex": "0xc4c4c4", "price": 0 },
+    { "id": "black", "name": "Black", "hex": "0x222222", "price": 20000 }
   ],
   "strapStyles": [
     {
@@ -10,28 +16,32 @@
       "name": "Brown Leather",
       "hex": "0x442211",
       "metal": 0.1,
-      "rough": 0.9
+      "rough": 0.9,
+      "price": 30000
     },
     {
       "id": "rubber_black",
       "name": "Black Rubber",
       "hex": "0x111111",
       "metal": 0.1,
-      "rough": 0.6
+      "rough": 0.6,
+      "price": 0
     },
     {
       "id": "metal_silver",
       "name": "Metal Silver",
       "hex": "0xc4c4c4",
       "metal": 0.8,
-      "rough": 0.2
+      "rough": 0.2,
+      "price": 40000
     },
     {
       "id": "metal_blue",
       "name": "Blue Sport",
       "hex": "0x000088",
       "metal": 0.7,
-      "rough": 0.3
+      "rough": 0.3,
+      "price": 35000
     }
   ]
 }
