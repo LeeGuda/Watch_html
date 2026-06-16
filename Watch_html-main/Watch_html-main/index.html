@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Luxury Watch Customizer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="brand-header">
+      <h1>LUXURY WATCH STUDIO</h1>
+      <p>CRAFT YOUR DREAM TIMEPIECE</p>
+    </header>
+
+    <div id="product-info">
+      <h2>Premium Chronograph Watch</h2>
+      <p id="product-description">
+        Experience unparalleled precision and style with our customizable luxury
+        watch. Choose from premium materials and designs to create a piece
+        that's uniquely yours.
+      </p>
+      <div id="price-display">₩500,000</div>
+    </div>
+
+    <div id="ui-container">
+      <div class="menu-wrapper">
+        <div id="case-menu" class="menu-section">
+          <span class="section-title">CASE MATERIAL</span>
+        </div>
+        <div id="strap-menu" class="menu-section">
+          <span class="section-title">STRAP SELECTION</span>
+        </div>
+      </div>
+      <button id="order-btn">ADD TO CART</button>
+    </div>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
